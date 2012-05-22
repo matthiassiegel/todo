@@ -1,0 +1,48 @@
+<div class="modal-wrap span4">
+
+	<div class="modal-header">
+		<span class="close">×</span>
+		<h3>Add new task</h3>
+	</div>
+
+	<div class="modal-body">
+	
+		<%= form_for @task, :url => '/tasks' do |f| %>	
+						
+			<%= render :partial => 'shared/validation_errors', :locals => { :obj => @task } %>
+			
+			<fieldset>
+				
+				<div class="control-group">
+					<%= f.label :name %>
+					<div class="controls">
+						<div class="p100-helper">
+			      	<%= f.text_field :name, :class => 'full-width' %>
+						</div>
+					</div>
+				</div>
+								
+				<div class="control-group">
+					<%= f.label :description %>
+					<div class="controls">
+						<div class="p100-helper">
+			      	<%= f.text_area :description, :class => 'full-width' %>
+						</div>
+					</div>
+				</div>
+								
+			</fieldset>
+			
+		<% end %>
+
+	</div>
+
+	<div class="modal-footer">
+		<div class="pull-right">
+			<%= spinner %>
+			<button type="button" class="btn btn-cancel">Cancel</button>
+			<button type="button" class="btn btn-primary btn-submit">Create task</button>
+		</div>
+	</div>
+	
+</div>

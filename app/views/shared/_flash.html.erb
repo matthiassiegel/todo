@@ -1,0 +1,62 @@
+<% unless flash.nil? %>
+	<% flash.each do |name, msg| %>
+		
+		<% if name.to_s == 'error' %>
+		<div class="alert alert-error">
+			<a class="close">×</a>
+			<table>
+				<tr>
+					<td><%= raw("<strong>Error</strong>&nbsp;&mdash;&nbsp;") %></td>
+					<td><%= raw(msg) %></td>
+				</tr>
+			</table>
+		</div>
+		<!-- alert -->
+
+		<% elsif name.to_s == 'warning' %>
+		<div class="alert">
+			<a class="close">×</a>
+			<table>
+				<tr>
+					<td><%= raw("<strong>Warning</strong>&nbsp;&mdash;&nbsp;") %></td>
+					<td><%= raw(msg) %></td>
+				</tr>
+			</table>
+		</div>
+		<!-- alert -->
+
+		<% elsif name.to_s == 'success' %>
+		<div class="alert alert-success">
+			<a class="close">×</a>
+			<table>
+				<tr>
+					<td><%= raw("<strong>Success</strong>&nbsp;&mdash;&nbsp;") %></td>
+					<td><%= raw(msg) %></td>
+				</tr>
+			</table>
+		</div>
+		<!-- alert -->		
+
+		<% elsif name.to_s == 'info' %>
+		<div class="alert alert-info">
+			<a class="close">×</a>
+			<table>
+				<tr>
+					<td><%= raw("<strong>Note</strong>&nbsp;&mdash;&nbsp;") %></td>
+					<td><%= raw(msg) %></td>
+				</tr>
+			</table>
+		</div>
+		<!-- alert -->
+
+		<% else %>
+		<div class="alert">
+			<a class="close">×</a>
+			<%= raw(msg) %>
+		</div>
+		<!-- alert -->
+
+		<% end %>
+
+	<% end %>
+<% end %>

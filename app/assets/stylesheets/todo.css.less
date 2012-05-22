@@ -1,0 +1,152 @@
+@import "bootstrap_and_overrides.css.less";
+
+
+body {
+	padding-top: 40px;
+}
+
+
+::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+* {
+	outline: none !important;
+}
+:focus, :active {
+	outline: 0 none !important;
+	-moz-outline-style: none;
+}
+
+
+#tasks {
+	margin: 20px 0 0 0;
+	position: relative;
+	
+	#actions {
+		position: absolute;
+		top: -50px;
+		right: 0;
+	}
+	
+	table {
+		th {
+			white-space: nowrap;
+		}
+		
+		tr {
+			&.red {
+				background-color: red !important;
+				
+				td {
+					background-color: transparent !important;
+				}
+			}
+		}
+		
+		.col-id {
+			width: 5%;
+		}
+		
+		.col-name {
+			width: auto;
+			
+			.name {
+				cursor: pointer;
+			}
+			.description {
+				margin: 8px 0 5px;
+				padding: 5px;
+				border: 1px solid #ddd;
+				background: #fff;
+				display: none;
+				
+				pre {
+					padding: 0;
+					margin: 0;
+					border: none;
+					background: transparent;
+					font-family: inherit;
+					font-size: 90%;
+					line-height: inherit;
+				}
+			}
+		}
+		
+		.col-date {
+			width: 10%;
+			white-space: nowrap;
+		}
+		
+		.col-controls {
+			text-align: right;
+			
+			span {
+				margin: 2px 3px 0;
+				display: inline-block;
+				cursor: pointer;
+			}
+			button {
+				margin: 0 0 0 3px;
+				vertical-align: top;
+				
+				& + button {
+					margin-left: -1px;
+				}
+			}
+		}
+	}
+	
+	#open {
+		.col-controls {
+			width: 20%;
+		}
+	}
+	
+	#complete {
+		.col-controls {
+			width: 5%;
+		}
+	}
+}
+
+
+
+
+.modal-backdrop {
+	background: #fff !important;
+}
+.modal {
+	max-height: none;
+	
+	*[class*="span"] {
+		margin: 0;
+	}
+		
+	.modal-header {
+		cursor: move;
+	}
+		
+	.modal-footer {
+		.steps {
+			position: relative;
+			top: 5px;
+		}
+		.btn {
+			float: left;
+		}
+		.spinner {
+			position: relative;
+			top: 9px;
+			right: 10px;
+			float: left;
+			display: none;
+		}
+	}
+}
+
+
+
+#task_description {
+	height: 80px;
+}

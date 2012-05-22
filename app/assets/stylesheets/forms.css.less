@@ -1,0 +1,140 @@
+@import "bootstrap_and_overrides.css.less";
+
+
+.full-width {
+	width: 100%;
+}
+
+.control-group {
+	margin-bottom: 18px;
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+	
+	span.error {
+		& + label {
+			color: @errorText;
+		}
+		& + input[type="text"], & + input[type="password"], & + input[type="email"], & + textarea {
+			border-color: @errorText;
+			color: @errorText;
+			
+			& + .add-on {
+				border-color: @errorText;
+			}
+		}
+	}
+	
+	.input-prepend {
+		input {
+			margin-bottom: 0;
+		}
+	}
+	
+	.input-append {
+		.add-on {
+			margin-top: -9px;
+		}
+	}
+	
+	& > select + .help-block, & > select + .spinner + .help-block {
+		margin-top: -3px;
+	}
+
+	.controls div.p100-helper {
+		margin-left: 10px;
+
+		input[type="text"], input[type="email"], input[type="password"], textarea {
+			margin-left: -10px;
+		}
+	}
+	
+	.help-block {
+		margin-top: 0;
+	}
+}
+
+form {
+	&.form-horizontal {
+		.control-group {
+			.controls {
+				& + .controls {
+					margin-top: 10px;
+				}
+			}
+			
+			.help-block {
+				margin-top: 5px;
+			}
+		}
+	}
+}
+
+fieldset {
+	& + fieldset {
+		padding-top: 15px;
+		border-top: 1px solid @grayLighter;
+	}
+	& + legend {
+		margin-top: 50px;
+	}
+	
+	& > h4 + .control-group {
+		margin-top: 15px;
+	}
+}
+
+.modal-body p + fieldset {
+	margin-top: 20px;
+}
+
+input.wide, textarea.wide {
+	width: 98%;
+}
+
+select + .spinner {
+	margin: 0 0 0 10px;
+	position: relative;
+	top: -2px;
+	display: none;
+}
+
+.checkbox input[type="checkbox"] {
+	margin-top: 2px;
+	margin-right: 10px;
+}
+.radio input[type="radio"] {
+	margin-top: 3px;
+	margin-right: 10px;
+}
+
+
+.modal {
+	.modal-wrap {
+		&.span5 {
+			.control-group {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.modal-body {
+		form {
+			margin: 0;
+			
+			// Bootstrap overwrite from forms.less, otherwise would be zindex 2
+			.input-prepend,
+			.input-append {
+			  input,
+			  select,
+			  .uneditable-input {
+			    &:focus {
+			      z-index: 1100;
+			    }
+			  }
+			}
+		}
+		
+	}
+}

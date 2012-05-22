@@ -1,0 +1,84 @@
+<%= render :partial => 'shared/flash', :locals => { :flash => flash } %>
+
+
+<div class="tabbable">
+	
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#open" data-toggle="tab">Open tasks</a></li>
+		<li><a href="#complete" data-toggle="tab">Completed tasks</a></li>
+	</ul>
+
+	<div class="tab-content">
+		<div class="tab-pane active" id="open">
+
+			<table class="table table-condensed table-striped">
+				<thead>
+					<tr>
+						<th class="col-id">#</th>
+						<th class="col-name">Name</th>
+						<th class="col-date">Date added</th>
+						<th class="col-controls">&nbsp;</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% for task in Task.open_tasks.order("position ASC") do %>
+					<tr data-task="<%= task.id %>">
+						<td class="col-id"><%= task.id %></td>
+						<td class="col-name">
+							<div class="name">
+								<%= task.name %>
+							</div>
+							<div class="description">
+								<pre><%= task.description %></pre>
+							</div>
+						</td>
+						<td class="col-date"><%= task.created_at.strftime('%e %b %Y') %></td>
+						<td class="col-controls">
+							<span title="Move up" class="task-move-up" data-task="<%= task.id %>"><i class="icon icon-chevron-up"></i></span>
+							<span title="Move down" class="task-move-down" data-task="<%= task.id %>"><i class="icon icon-chevron-down"></i></span>
+							<button type="button" class="btn btn-success btn-mini task-done" data-task="<%= task.id %>">Done</button>
+							<button type="button" class="btn btn-danger btn-mini task-delete" data-task="<%= task.id %>">Delete</button>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+						
+		</div>
+		
+		<div class="tab-pane" id="complete">
+
+			<table class="table table-condensed table-striped">
+				<thead>
+					<tr>
+						<th class="col-id">#</th>
+						<th class="col-name">Name</th>
+						<th class="col-controls">&nbsp;</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% for task in Task.completed_tasks.order("updated_at DESC") do %>
+					<tr data-task="<%= task.id %>">
+						<td class="col-id"><%= task.id %></td>
+						<td class="col-name">
+							<div class="name">
+								<%= task.name %>
+							</div>
+							<div class="description">
+								<pre><%= task.description %></pre>
+							</div>
+						</td>
+						<td class="col-controls">
+							<button type="button" class="btn btn-danger btn-mini task-delete" data-task="<%= task.id %>">Delete</button>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+			
+		</div>
+	</div>
+	
+</div>

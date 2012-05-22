@@ -1,0 +1,29 @@
+<% if obj.errors.any? %>
+	<% if obj.errors.count == 1 %>
+		<div class="alert alert-error">
+			<span class="close">×</span>
+			<table>
+				<tr>
+					<td><%= raw("<strong>Error</strong>&nbsp;&mdash;&nbsp;") %></td>
+					<td><%= obj.errors.full_messages.first %></td>
+				</tr>
+			</table>
+		</div>
+
+	<% else %>
+		<%
+			messages = obj.errors.full_messages
+			messages.uniq!
+			logger.info("##### Duplicate validation message deleted") if messages.count != obj.errors.full_messages.count
+		%>
+		<div class="alert alert-block alert-error">
+			<span class="close">×</span>
+		  <h4 class="alert-heading">Please correct the following <%= (obj.errors.count > 1) ? "errors" : "error" %>:</h4>
+		  <ul>
+		  <% messages.each do |msg| %>
+		    <li><%= msg %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	<% end %>
+<% end %>
