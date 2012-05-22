@@ -10,7 +10,7 @@ A really simple Rails task management app.
 * Description can be updated
 * Delete tasks, or mark as completed.
 
-Based on Rails 3.2 and SQLlite. Hacked together within a couple of hours.
+Based on Rails 3.2 and SQLite3 and Twitter Bootstrap. Hacked together within a couple of hours.
 
 ## Installation
 
@@ -20,18 +20,19 @@ Based on Rails 3.2 and SQLlite. Hacked together within a couple of hours.
 ## Screenshots
 
 <div>
-	<img src="https://github.com/matthiassiegel/todo/tree/master/doc/screen1.png" alt="Add new task">
+	<img src="https://github.com/matthiassiegel/todo/raw/master/doc/screen1.png" alt="Add new task">
 </div>
 
 <div>
-	<img src="https://github.com/matthiassiegel/todo/tree/master/doc/screen2.png" alt="Task list and description">
+	<img src="https://github.com/matthiassiegel/todo/raw/master/doc/screen2.png" alt="Task list and description">
 </div>
 
 ## Wishlist
 
 * Drag and drop re-ordering of tasks
 * Group tasks as subtasks of others
+* Add tests
 
 ## Copyright
 Copyright (c) 2012 Matthias Siegel.
-See [LICENSE][https://github.com/matthiassiegel/todo/tree/master/LICENSE.md] for details.
+See [LICENSE](https://github.com/matthiassiegel/todo/tree/master/LICENSE.md) for details.
