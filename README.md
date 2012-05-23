@@ -8,7 +8,7 @@ A really simple Rails task management app.
 * Add new task, with name and description
 * Move tasks up/down to sort by priority
 * Description can be updated
-* Delete tasks, or mark as completed.
+* Delete tasks, or mark as completed
 
 Based on Rails 3.2 and SQLite3 and Twitter Bootstrap. Hacked together within a couple of hours.
 
@@ -20,10 +20,12 @@ Based on Rails 3.2 and SQLite3 and Twitter Bootstrap. Hacked together within a c
 ## Screenshots
 
 <div>
+	<h3>Add new task</h3>
 	<img src="https://github.com/matthiassiegel/todo/raw/master/doc/screen1.png" alt="Add new task">
 </div>
 
 <div>
+	<h3>Task list and description</h3>
 	<img src="https://github.com/matthiassiegel/todo/raw/master/doc/screen2.png" alt="Task list and description">
 </div>
 

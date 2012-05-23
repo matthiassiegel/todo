@@ -170,11 +170,12 @@ $(document).on('click', '.task-move-down', function() {
 //
 $(document).on('click', '.col-name .description', function() {
 	var desc = $(this),
+			height = desc.height() > 100 ? desc.height() : 100,
 			pre = desc.find('pre'),
 			content = pre.html();
 	
 	if (pre.length > 0) {
-		desc.html('<textarea>' + content + '</textarea>');
+		desc.html('<textarea style="height:' + height + 'px;">' + content + '</textarea>');
 		desc.children().focus();
 	}
 	
